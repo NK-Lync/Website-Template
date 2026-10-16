@@ -1,0 +1,385 @@
+
+/* Thiết lập chung */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    color: #1f2937;
+}
+
+/* Thanh điều hướng */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 6%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+.background {
+    background: #111827;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: white;
+    padding: 5px;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    list-style: none;
+}
+
+.nav-list li a {
+    display: block;
+    padding: 12px 14px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+    color: #60a5fa;
+}
+
+/* Form tìm kiếm */
+.rightNav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+#search {
+    width: 160px;
+    min-width: 0;
+    padding: 9px 12px;
+    border: 1px solid #9ca3af;
+    border-radius: 8px;
+    outline: none;
+}
+
+#search:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+/* Nút bấm */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #60a5fa;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    padding: 9px 13px;
+    font-size: 14px;
+}
+
+.section-btn {
+    align-self: flex-start;
+    margin-top: 24px;
+}
+
+.dark-btn {
+    margin-top: 22px;
+}
+
+/* Nội dung phần 1 */
+.firstsection {
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+}
+
+.box-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    min-height: 340px;
+    margin: auto;
+    padding: 55px 30px;
+}
+
+.firstHalf {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 850px;
+}
+
+.eyebrow {
+    margin-bottom: 12px;
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Nội dung phần 2 */
+.secondsection {
+    display: flex;
+    align-items: center;
+    min-height: 380px;
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+}
+
+.secondHalf {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 850px;
+}
+
+/* Kiểu chữ */
+.text-big {
+    margin-bottom: 18px;
+    color: #111827;
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.text-small {
+    color: #374151;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+/* Các phần nội dung có chữ và ảnh */
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1100px;
+    min-height: 390px;
+    margin: 0 auto;
+    padding: 65px 30px;
+}
+
+/* Đảo vị trí ảnh và chữ */
+.section-Left {
+    flex-direction: row-reverse;
+}
+
+.paras {
+    flex: 1;
+    min-width: 0;
+}
+
+.sectionTag {
+    margin-bottom: 18px;
+}
+
+.sectionSubTag {
+    margin-bottom: 20px;
+}
+
+/* Hình ảnh */
+.thumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 42%;
+    min-width: 0;
+}
+
+.thumbnail img {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 3px solid #e5e7eb;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Nhãn Java */
+.java-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.java-tags span {
+    padding: 6px 15px;
+    border-radius: 20px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Chân trang */
+.footer {
+    padding: 28px 20px;
+    text-align: center;
+}
+
+.text-footer {
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.footer-note {
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+/* Responsive: máy tính bảng */
+@media (max-width: 900px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 12px 4%;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    .nav-list li a {
+        padding: 10px;
+    }
+
+    .rightNav {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #search {
+        width: min(280px, 65%);
+    }
+
+    .section {
+        gap: 30px;
+    }
+
+    .text-small {
+        font-size: 16px;
+    }
+}
+
+/* Responsive: điện thoại */
+@media (max-width: 600px) {
+    .navbar {
+        gap: 8px;
+    }
+
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .nav-list {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .nav-list li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-list li a {
+        padding: 7px;
+    }
+
+    .firstsection,
+    .secondsection {
+        min-height: auto;
+    }
+
+    .box-main {
+        min-height: auto;
+        padding: 45px 22px;
+    }
+
+    .text-big {
+        font-size: 30px;
+    }
+
+    .text-small {
+        font-size: 15px;
+    }
+
+    .section,
+    .section-Left {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 28px;
+        min-height: auto;
+        padding: 45px 22px;
+    }
+
+    .thumbnail {
+        flex: auto;
+        width: 100%;
+    }
+
+    .thumbnail img {
+        max-width: 100%;
+    }
+
+    .section-btn,
+    .dark-btn {
+        align-self: flex-start;
+    }
+
+    .footer {
+        padding: 24px 15px;
+    }
+}

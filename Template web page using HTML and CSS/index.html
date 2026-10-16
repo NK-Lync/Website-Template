@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Simple Web Development Template</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Thanh điều hướng -->
+    <nav class="navbar background">
+        <a href="#" class="logo" aria-label="Trang chủ">
+            <img
+                src="images/logo.png"
+                alt="Logo lập trình">
+        </a>
+
+        <ul class="nav-list">
+            <li><a href="#web">Web Technology</a></li>
+            <li><a href="#program">C Programming</a></li>
+            <li><a href="#java">Java</a></li>
+        </ul>
+
+        <form class="rightNav" id="searchForm" role="search">
+            <input
+                type="search"
+                name="search"
+                id="search"
+                placeholder="Tìm kiếm..."
+                aria-label="Tìm kiếm nội dung">
+
+            <button class="btn btn-sm" type="submit">Search</button>
+        </form>
+    </nav>
+
+    <!-- Phần 1: Web Technology -->
+    <section class="firstsection" id="web">
+        <div class="box-main">
+            <div class="firstHalf">
+                <span class="eyebrow">KHÁM PHÁ CÔNG NGHỆ</span>
+
+                <h1 class="text-big">Web Technology</h1>
+
+                <p class="text-small">
+                    HTML là viết tắt của HyperText Markup Language, được sử dụng
+                    để xây dựng cấu trúc cho trang web. HTML kết hợp với CSS để
+                    định dạng giao diện và JavaScript để tạo tương tác. Những
+                    công nghệ này là nền tảng quan trọng giúp phát triển các
+                    website hiện đại, từ trang giới thiệu đơn giản đến ứng dụng
+                    web phức tạp.
+                </p>
+
+                <a class="btn section-btn" href="#program">
+                    Khám phá thêm
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần 2: C Programming -->
+    <section class="secondsection" id="program">
+        <div class="box-main">
+            <div class="secondHalf">
+                <h2 class="text-big">C Programming</h2>
+
+                <p class="text-small">
+                    C là ngôn ngữ lập trình thủ tục được Dennis Ritchie phát
+                    triển. Ngôn ngữ này nổi bật với tốc độ xử lý tốt, khả năng
+                    thao tác bộ nhớ và cú pháp tương đối gọn. C thường được sử
+                    dụng trong lập trình hệ thống, hệ điều hành, trình biên dịch
+                    và các chương trình cần kiểm soát tài nguyên hiệu quả.
+                </p>
+
+                <a class="btn section-btn" href="#java">
+                    Tìm hiểu Java
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần 3: Java -->
+    <section class="section" id="java">
+        <div class="paras">
+            <span class="eyebrow">NGÔN NGỮ LẬP TRÌNH</span>
+
+            <h2 class="sectionTag text-big">Java</h2>
+
+            <p class="sectionSubTag text-small">
+                Java là ngôn ngữ lập trình hướng đối tượng phổ biến. Mã nguồn
+                Java thường được biên dịch thành bytecode, sau đó chạy trên
+                Java Virtual Machine (JVM). Cách tiếp cận này giúp chương trình
+                có thể hoạt động trên nhiều nền tảng có môi trường JVM phù hợp.
+                Java được sử dụng trong phát triển ứng dụng doanh nghiệp,
+                backend, công cụ và nhiều hệ thống phần mềm khác.
+            </p>
+
+            <div class="java-tags">
+                <span>OOP</span>
+                <span>JVM</span>
+                <span>Backend</span>
+            </div>
+        </div>
+
+        <div class="thumbnail">
+            <img
+                src="images/photo-1498050108023-c5249f4df085.jpg"
+                alt="Máy tính xách tay dùng trong lập trình">
+        </div>
+    </section>
+
+    <!-- Phần 4: Giới thiệu HTML và CSS -->
+    <section class="section section-Left" id="html-css">
+        <div class="paras">
+            <span class="eyebrow">BẮT ĐẦU TỪ CƠ BẢN</span>
+
+            <h2 class="sectionTag text-big">HTML &amp; CSS</h2>
+
+            <p class="sectionSubTag text-small">
+                HTML tạo nên cấu trúc và nội dung của trang web, trong khi CSS
+                quyết định màu sắc, khoảng cách, kiểu chữ và bố cục. Khi kết hợp
+                hai công nghệ này, bạn có thể xây dựng giao diện rõ ràng, dễ sử
+                dụng và thích ứng với nhiều kích thước màn hình.
+            </p>
+
+            <a class="btn dark-btn" href="#web">Quay lại đầu trang</a>
+        </div>
+
+        <div class="thumbnail">
+            <img
+                src="images/photo-1461749280684-dccba630e2f6.jpg"
+                alt="Mã nguồn lập trình trên màn hình">
+        </div>
+    </section>
+
+    <!-- Chân trang -->
+    <footer class="background footer">
+        <p class="text-footer">
+            Copyright &copy; 2026 - Simple Web Development Template
+        </p>
+        <p class="footer-note">Được xây dựng bằng HTML và CSS</p>
+    </footer>
+
+    <!-- Xử lý tìm kiếm minh họa -->
+    <script>
+        const searchForm = document.getElementById("searchForm");
+        const searchInput = document.getElementById("search");
+
+        searchForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const keyword = searchInput.value.trim().toLowerCase();
+
+            if (!keyword) {
+                alert("Vui lòng nhập từ khóa cần tìm.");
+                return;
+            }
+
+            const sections = document.querySelectorAll("section");
+            let foundSection = null;
+
+            sections.forEach(function (section) {
+                if (
+                    section.innerText.toLowerCase().includes(keyword) &&
+                    !foundSection
+                ) {
+                    foundSection = section;
+                }
+            });
+
+            if (foundSection) {
+                foundSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            } else {
+                alert("Không tìm thấy nội dung phù hợp.");
+            }
+        });
+    </script>
+
+</body>
+</html>

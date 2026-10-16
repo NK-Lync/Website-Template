@@ -1,0 +1,387 @@
+
+/* General settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #282a35;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Top header */
+.top-header {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    background-color: #ffffff;
+    gap: 25px;
+}
+
+.logo {
+    font-size: 29px;
+    font-weight: bold;
+    color: #04aa6d;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #282a35;
+}
+
+.top-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-menu a {
+    color: #282a35;
+    padding: 10px 14px;
+    border-radius: 25px;
+    font-weight: 500;
+}
+
+.top-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+.login-btn {
+    display: inline-block;
+    background-color: #04aa6d;
+    color: white;
+    padding: 9px 25px;
+    border-radius: 25px;
+}
+
+.login-btn:hover,
+.green-button:hover {
+    background-color: #059862;
+}
+
+/* Main navigation */
+.main-nav {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    white-space: nowrap;
+    background-color: #282a35;
+    padding: 0 12px;
+}
+
+.main-nav a {
+    color: white;
+    padding: 12px 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.main-nav a:hover {
+    background-color: #000000;
+}
+
+.main-nav a.active {
+    background-color: #04aa6d;
+}
+
+/* Three-column page layout */
+.page-layout {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr) 190px;
+    align-items: start;
+    min-height: 750px;
+}
+
+/* Left sidebar */
+.sidebar {
+    background-color: #e7e9eb;
+    padding: 18px 0 30px;
+    min-height: 100%;
+}
+
+.sidebar h2 {
+    font-size: 21px;
+    padding: 0 16px 12px;
+}
+
+.sidebar a {
+    display: block;
+    color: #282a35;
+    padding: 5px 16px;
+    font-size: 14px;
+}
+
+.sidebar a:hover {
+    background-color: #cccccc;
+}
+
+.sidebar a.selected {
+    background-color: #04aa6d;
+    color: white;
+}
+
+/* Main content */
+.content {
+    min-width: 0;
+    padding: 28px 34px 50px;
+}
+
+.lesson h1 {
+    font-size: 38px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.lesson h2 {
+    font-size: 28px;
+    font-weight: 400;
+    margin: 22px 0 12px;
+}
+
+.lesson h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.lesson p {
+    margin-bottom: 15px;
+}
+
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.lesson-navigation a {
+    background-color: #04aa6d;
+    color: white;
+    padding: 9px 17px;
+    border-radius: 5px;
+}
+
+.lesson-navigation a:hover {
+    background-color: #059862;
+}
+
+.intro-box {
+    background-color: #d9eee1;
+    padding: 28px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.intro-box h2 {
+    margin-top: 0;
+}
+
+.green-button {
+    display: inline-block;
+    background-color: #04aa6d;
+    color: white;
+    padding: 10px 18px;
+    margin-top: 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eeeeee;
+    margin: 25px 0;
+}
+
+/* Code examples */
+.code-example {
+    background-color: #e7e9eb;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.code-example pre {
+    background-color: #ffffff;
+    border-left: 4px solid #04aa6d;
+    padding: 16px;
+    margin: 12px 0;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+.code-example code {
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.info-box {
+    background-color: #fff4a3;
+    padding: 18px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+/* Right sidebar */
+.right-sidebar {
+    padding: 25px 12px;
+    text-align: center;
+}
+
+.right-sidebar > h3 {
+    font-size: 11px;
+    font-weight: normal;
+    color: #777777;
+    margin-bottom: 10px;
+}
+
+.ad-placeholder {
+    height: 250px;
+    border: 1px solid #dddddd;
+    background-color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaaaaa;
+    margin-bottom: 25px;
+}
+
+.right-card {
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    padding: 15px 12px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.right-card h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.right-card p {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.right-card > a:not(.green-button) {
+    display: block;
+    color: #282a35;
+    padding: 5px 0;
+    font-size: 13px;
+}
+
+.right-card > a:not(.green-button):hover {
+    color: #04aa6d;
+}
+
+/* Footer */
+.footer {
+    background-color: #282a35;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.footer h2 {
+    color: #04aa6d;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+    .page-layout {
+        grid-template-columns: 200px minmax(0, 1fr);
+    }
+
+    .right-sidebar {
+        display: none;
+    }
+
+    .content {
+        padding: 25px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+    .top-header {
+        height: auto;
+        min-height: 65px;
+        padding: 12px 15px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .top-menu {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .top-menu a {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .header-actions {
+        margin-left: auto;
+    }
+
+    .main-nav a {
+        padding: 12px 13px;
+    }
+
+    .page-layout {
+        display: block;
+    }
+
+    .sidebar {
+        min-height: auto;
+        padding-bottom: 15px;
+    }
+
+    .sidebar h2 {
+        font-size: 19px;
+    }
+
+    .sidebar a {
+        display: inline-block;
+        padding: 7px 12px;
+    }
+
+    .content {
+        padding: 22px 18px 35px;
+    }
+
+    .lesson h1 {
+        font-size: 32px;
+    }
+
+    .lesson h2 {
+        font-size: 24px;
+    }
+
+    .intro-box {
+        padding: 20px;
+    }
+}

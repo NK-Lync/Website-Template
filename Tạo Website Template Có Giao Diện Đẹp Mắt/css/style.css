@@ -1,0 +1,658 @@
+
+/* =========================
+   1. CÀI ĐẶT CHUNG
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1e293b;
+    background: #ffffff;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+:root {
+    --primary: #0d9488;
+    --primary-dark: #0f766e;
+    --dark: #0f172a;
+    --muted: #64748b;
+    --light: #f8fafc;
+}
+
+/* =========================
+   2. HEADER VỚI NỀN ẢNH
+========================= */
+.header {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 520px;
+    padding: 100px 24px 90px;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    background-image:  url("../images/banner.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+/* Lớp nền mờ */
+.header::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    inset: -10px;
+    background: inherit;
+    filter: blur(5px);
+    transform: scale(1.02);
+}
+
+/* Lớp phủ tối để chữ dễ đọc */
+.header-overlay {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.82),
+        rgba(15, 118, 110, 0.62)
+    );
+}
+
+.header-content {
+    max-width: 850px;
+    animation: fade-in 0.8s ease both;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: #5eead4;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.header h1 {
+    margin-bottom: 18px;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+}
+
+.header-content p {
+    margin-bottom: 32px;
+    color: #e2e8f0;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 25px;
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    background: var(--primary);
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: var(--primary-dark);
+    box-shadow: 0 10px 25px rgba(13, 148, 136, 0.25);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    color: #e2e8f0;
+    font-size: 12px;
+}
+
+/* =========================
+   3. NAVIGATION MENU
+========================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    border-bottom: 1px solid #e2e8f0;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+    backdrop-filter: blur(12px);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    max-width: 1200px;
+    min-height: 72px;
+    margin: 0 auto;
+    padding: 10px 28px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--dark);
+    font-size: 20px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.brand-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: var(--primary);
+    color: white;
+    font-size: 22px;
+}
+
+.brand-highlight {
+    color: var(--primary);
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+}
+
+.nav-list a {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 7px;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.25s ease, background 0.25s ease;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+    background: #ccfbf1;
+    color: var(--primary-dark);
+}
+
+.menu-toggle,
+.menu-button {
+    display: none;
+}
+
+/* =========================
+   4. TIÊU ĐỀ CÁC SECTION
+========================= */
+.intro,
+.content {
+    padding: 90px 28px;
+}
+
+.intro {
+    background: #ffffff;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.section-heading .eyebrow {
+    color: var(--primary);
+}
+
+.section-heading h2,
+.contact h2 {
+    margin-bottom: 16px;
+    color: var(--dark);
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    line-height: 1.25;
+    letter-spacing: -0.7px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+/* =========================
+   5. THẺ GIỚI THIỆU
+========================= */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    padding: 25px 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    background: var(--light);
+    text-align: center;
+}
+
+.stat-item strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--primary);
+    font-size: 30px;
+}
+
+.stat-item span {
+    color: #475569;
+    font-size: 14px;
+}
+
+/* =========================
+   6. CARD LAYOUT BẰNG CSS GRID
+========================= */
+.content {
+    background: #f8fafc;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.04);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
+}
+
+.card-image {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+    background: #e2e8f0;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.06);
+}
+
+.card-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.75);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    backdrop-filter: blur(8px);
+}
+
+.card-body {
+    padding: 26px;
+}
+
+.card-category {
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.card h3 {
+    margin: 10px 0 12px;
+    color: var(--dark);
+    font-size: 21px;
+}
+
+.card p {
+    margin-bottom: 22px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-dark);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.card-link span {
+    transition: transform 0.25s ease;
+}
+
+.card-link:hover span {
+    transform: translateX(5px);
+}
+
+/* =========================
+   7. PHẦN LIÊN HỆ
+========================= */
+.contact {
+    position: relative;
+    padding: 85px 28px;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(15, 23, 42, 0.94),
+            rgba(15, 118, 110, 0.9)
+        ),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.contact h2 {
+    color: white;
+}
+
+.contact p {
+    margin-bottom: 28px;
+    color: #e2e8f0;
+}
+
+.btn-light {
+    border-color: white;
+    background: white;
+    color: var(--primary-dark);
+}
+
+.btn-light:hover {
+    border-color: #ccfbf1;
+    background: #ccfbf1;
+    color: var(--dark);
+}
+
+/* =========================
+   8. FOOTER HAI CỘT
+========================= */
+.footer {
+    background: #0b1220;
+    color: #cbd5e1;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 55px 28px;
+}
+
+.footer-brand {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-left p {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.footer-note {
+    color: #94a3b8;
+}
+
+.footer-right h3 {
+    margin-bottom: 15px;
+    color: white;
+    font-size: 17px;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 20px;
+    margin-bottom: 22px;
+    list-style: none;
+}
+
+.footer-links a,
+.social-links a {
+    color: #cbd5e1;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.social-links a:hover {
+    color: #5eead4;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    color: #64748b;
+}
+
+/* =========================
+   9. HIỆU ỨNG
+========================= */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   10. RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+    .nav-container {
+        gap: 12px;
+        padding: 10px 20px;
+    }
+
+    .nav-list {
+        gap: 0;
+    }
+
+    .nav-list a {
+        padding: 9px;
+        font-size: 13px;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-container {
+        gap: 35px;
+    }
+}
+
+@media (max-width: 650px) {
+    .header {
+        min-height: 450px;
+        padding: 85px 22px;
+    }
+
+    .header h1 {
+        letter-spacing: -0.8px;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        min-height: 68px;
+    }
+
+    /* Nút mở menu trên điện thoại */
+    .menu-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 42px;
+        height: 42px;
+        padding: 10px;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .menu-button span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        border-radius: 2px;
+        background: var(--dark);
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        padding: 8px 0 12px;
+    }
+
+    .nav-list a {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .menu-toggle:checked ~ .nav-list {
+        display: flex;
+    }
+
+    .menu-toggle:focus-visible ~ .menu-button {
+        outline: 2px solid var(--primary);
+        outline-offset: 3px;
+    }
+
+    .intro,
+    .content {
+        padding: 65px 20px;
+    }
+
+    .section-heading {
+        margin-bottom: 32px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stat-item {
+        padding: 18px;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .card-image {
+        height: 220px;
+    }
+
+    .contact {
+        padding: 65px 22px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 40px 22px;
+    }
+}
+
+/* Tôn trọng cài đặt giảm chuyển động của người dùng */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
